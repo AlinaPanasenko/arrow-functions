@@ -1,14 +1,37 @@
-/**
- * To run this file in Gitpod, use the 
- * command node arrow-functions.js in the terminal
- */
+let students = [
+    {
+        name: 'John',
+        subjects: ['maths', 'english', 'cad'],
+        teacher: {maths: 'Harry', english: 'Joan', cad: 'Paul'},
+        results: {maths: 90, english: 75, cad: 87},
+    },
+    {
+        name: 'Emily',
+        subjects: ['science', 'maths','english', 'art'],
+        teacher: {science: 'Iris', maths: 'Harry', english: 'Joan', art: 'Simon'},
+        results: {science: 93, maths: 95, english: 80, art: 95},
+    },
+    {
+        name: 'Adam',
+        subjects: ['science', 'maths', 'art'],
+        teacher: {science: 'Iris', maths: 'Harry', art: 'Simon'},
+        results: {science: 63, maths: 79, art: 95},
+    }
+];
 
-// Vanilla JavaScript Function
+const averagePoints = (arr, subject) => {
+    allPoints = 0;
+    sum = 0;
 
-// Arrow Function With Parameters
+    for(let item of arr){
+        if(subject in item.results) {
+            allPoints += item.results[subject];
+            sum += 1;
+        }
+    }
 
-// Single Line Arrow Function With Parameters
+    return allPoints/sum
+};
 
-// Implicit Returns
-
-// Returning Multiple Lines
+let averageMarks = averagePoints(students, 'english');
+console.log(averageMarks);
